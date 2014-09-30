@@ -57,17 +57,14 @@ class SiteController extends Controller
 	 */
 	public function actionIndex()
 	{
+        $global_tags = GlobalTag::model()->findAll(array("select"=>"global_tag_name"));
+
+
+        /*var_dump($global_tags);
+        exit;*/
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
-        if(!Yii::app()->user->isGuest){
-            // get the user data
-            print "<pre>";
-            echo Yii::app()->user->name."<br/>";
-            print_r(Yii::app()->user);
-            print "</pre>";
-
-        }
-		$this->render('index');
+		$this->render('index', array('tags_global'=>$global_tags));
 	}
 
 	/**

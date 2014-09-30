@@ -1,2 +1,6 @@
 .idea
 !assets/.gitkeep
+assets/
+index.php
+project_docs/BlazingPassionsDataModel.mwb.bak
+!protected/runtime/
