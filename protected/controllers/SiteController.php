@@ -57,9 +57,14 @@ class SiteController extends Controller
 	 */
 	public function actionIndex()
 	{
+        $global_tags = GlobalTag::model()->findAll(array("select"=>"global_tag_name"));
+
+
+        /*var_dump($global_tags);
+        exit;*/
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
-		$this->render('index');
+		$this->render('index', array('tags_global'=>$global_tags));
 	}
 
 	/**

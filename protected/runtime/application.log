@@ -391,3 +391,11 @@ REQUEST_URI=/yiipassions/site/login
 in C:\Users\Chinmay\Workspace\yiipassions\protected\views\layouts\main.php (70)
 in C:\Users\Chinmay\Workspace\yiipassions\protected\views\layouts\column1.php (6)
 in C:\Users\Chinmay\Workspace\yiipassions\protected\controllers\SiteController.php (128)
+2014/09/30 17:28:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii".' in C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('gii')
+#1 C:\Users\Chinmay\Workspace\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\Chinmay\Workspace\yiipassions\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiipassions/gii
+---

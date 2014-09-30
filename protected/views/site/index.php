@@ -1,57 +1,22 @@
 <?php
 /* @var $this SiteController */
-
-$this->pageTitle=Yii::app()->name;
 $this->pageTitle=Yii::app()->name;
 $third_party_scripts = Yii::app()->assetManager->publish(Yii::app()->basePath . '/scripts/');
 Yii::app()->clientScript->registerScriptFile($third_party_scripts . '/jquery.tagcanvas.min.js');
+//var_dump($tags_global);
+
 ?>
 <div class="container-fluid-tag-cloud">
     <div id="myCanvasContainer">
         <canvas width="950" height="400" id="myCanvas">
             <ul>
-                <li><a href="#origami/">Origami for Kids</a></li>
-                <li><a href="#palm-reading-palmistry/">Palmistry</a></li>
-                <li><a href="#paper-crafts/">Paper Crafts</a></li>
-                <li><a href="#paragliding/">Paragliding</a></li>
-                <li><a href="#pet-adoptions/">Pet Adoption</a></li>
-                <li><a href="#photography/">Photography </a></li>
-
-                <li><a href="#exercises/">Physical Exercises and Fitness Activities</a></li>
-
-                <li><a href="#quilting/">Quilting</a></li>
-                <li><a href="#radios/">Radio</a></li>
-                <li><a href="#reading/">Reading</a></li>
-                <li><a href="#riddles/">Riddles</a></li>
-                <li><a href="#sand-art-sand-sculpting-and-sand-crafts.html">Sand Sculpting and Sand Crafts</a></li>
-                <li><a href="#sewing/">Sewing</a></li>
-                <li><a href="#singing-lessons/">Singing Lessons</a></li>
-                <li><a href="#space-explorations/">Space Exploration</a></li>
-                <li><a href="#stamp-collecting/">Stamp Collecting </a>
-                <li><a href="#how-to-play-sudoku-step-by-step.html">Sudoku Puzzles</a></li>
-                <li><a href="#climbing/">Climbing</a></li>
-
-                <li><a href="#sailing/">Sailing </a> and <a href="#boating/">Boating</a></li>
-                <li><a href="#salsa-dancing/">Salsa Dancing</a></li>
-                <li><a href="#scrapbooking/">Scrapbooking</a></li>
-                <li><a href="#scubadiving/">Scuba Diving</a></li>
-                <li><a href="#skateboarding/">Skateboarding</a></li>
-                <li><a href="#essential-tips-about-skydiving-for-the-first-time.html">Skydiving / Parachuting</a></li>
-                <li><a href="#snow-skiing/">Snow Skiing</a></li>
-                <li><a href="#snowboarding/">Snowboarding</a></li>
-                <li><a href="#speed-skating-rules-and-regulations.html">Radio</a></li>
-                <li><a href="#stained-glass/">Stained Glass</a></li>
-                <li><a href="#surfing/">Surfing </a></li>
-                <li><a href="#swimming/">Swimming</a></li>
-                <li><a href="#tango-dancing-lessons-tango-dance-steps.html">Tango Dance</a></li>
-                <li><a href="#treasure-hunting/">Treasure Hunting</a></li>
-                <li><a href="#how-to-choose-proper-trekking-poles.html">Trekking</a></li>
-                <li><a href="#vacations/">Vacations / Traveling</a></li>
-                <li><a href="#watercolor-paintings/">Watercolor Paintings</a></li>
-                <li><a href="#wood-carvings-and-crafts.html">Wood Carving</a></li>
-                <li><a href="#woodworking/">Woodworking</a></li>
-                <li><a href="#writing/">Writing</a></li>
-
+                <?php
+                foreach($tags_global as $k=>$v){
+                ?>
+                <li><a href="#<?php echo $v->global_tag_name;?>"><?php echo $v->global_tag_name;?></a></li>
+                <?php
+                }
+                ?>
             </ul>
         </canvas>
     </div>
