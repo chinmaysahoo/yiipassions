@@ -1,0 +1,22 @@
+body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+
+.container-fluid-tag-cloud {
+    background-color: #010101;
+}
+
+#myCanvasContainer {
+    width: 950px;
+    margin: 0px auto;
+}
+
+#myCanvas {
+    background-color: #000000;
+}
+
+.container-fluid-carousel {
+    margin-top:10px;
+    border: 1px solid #cccccc;
+}

@@ -1,0 +1,393 @@
+2014/09/29 07:28:03 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'yiipassions.user_oauth' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `user_oauth`.
+in C:\Users\Chinmay\Workspace\yiipassions\protected\extensions\hoauth\models\UserOAuth.php (309)
+in C:\Users\Chinmay\Workspace\yiipassions\protected\extensions\hoauth\models\UserOAuth.php (50)
+in C:\Users\Chinmay\Workspace\yiipassions\protected\extensions\hoauth\HOAuthAction.php (160)
+2014/09/29 07:28:03 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'yiipassions.user_oauth' doesn't exist. The SQL statement executed was: 			ALTER TABLE `user_oauth` CHANGE `name` `provider` VARCHAR( 45 ) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
+			CHANGE `value` `identifier` VARCHAR( 64 ) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
+			.
+in C:\Users\Chinmay\Workspace\yiipassions\protected\extensions\hoauth\models\UserOAuth.php (339)
+in C:\Users\Chinmay\Workspace\yiipassions\protected\extensions\hoauth\models\UserOAuth.php (50)
+in C:\Users\Chinmay\Workspace\yiipassions\protected\extensions\hoauth\HOAuthAction.php (160)
+2014/09/29 07:33:10 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1-Facebook' for key 'unic_user_id_name'. The SQL statement executed was: INSERT INTO `user_oauth` (`provider`, `profile_cache`, `identifier`, `session_data`, `user_id`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4).
+in C:\Users\Chinmay\Workspace\yiipassions\protected\extensions\hoauth\models\UserOAuth.php (261)
+in C:\Users\Chinmay\Workspace\yiipassions\protected\extensions\hoauth\HOAuthAction.php (224)
+in C:\Users\Chinmay\Workspace\yiipassions\protected\extensions\hoauth\HOAuthAction.php (163)
+2014/09/29 07:33:10 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1-Facebook' for key 'unic_user_id_name'. The SQL statement executed was: INSERT INTO `user_oauth` (`provider`, `profile_cache`, `identifier`, `session_data`, `user_id`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4)' in C:\Users\Chinmay\Workspace\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\Users\Chinmay\Workspace\yii\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 C:\Users\Chinmay\Workspace\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 C:\Users\Chinmay\Workspace\yiipassions\protected\extensions\hoauth\models\UserOAuth.php(261): CActiveRecord->save()
+#3 C:\Users\Chinmay\Workspace\yiipassions\protected\extensions\hoauth\HOAuthAction.php(224): UserOAuth->bindTo('1')
+#4 C:\Users\Chinmay\Workspace\yiipassions\protected\extensions\hoauth\HOAuthAction.php(163): HOAuthAction->getAccessCode()
+#5 C:\Users\Chinmay\Workspace\yiipassions\protected\extensions\hoauth\HOAuthAction.php(136): HOAuthAction->oAuth('Facebook')
+#6 C:\Users\Chinmay\Workspace\yii\framework\web\actions\CAction.php(76): HOAuthAction->run()
+#7 C:\Users\Chinmay\Workspace\yii\framework\web\CController.php(308): CAction->runWithParams(Array)
+#8 C:\Users\Chinmay\Workspace\yii\framework\web\CController.php(286): CController->runAction(Object(HOAuthAction))
+#9 C:\Users\Chinmay\Workspace\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(HOAuthAction), Array)
+#10 C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php(282): CController->run('oauth')
+#11 C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/oauth')
+#12 C:\Users\Chinmay\Workspace\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\Users\Chinmay\Workspace\yiipassions\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/yiipassions/site/oauth?provider=Facebook
+HTTP_REFERER=http://localhost/yiipassions/site/login
+---
+2014/09/29 07:34:23 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1-Facebook' for key 'unic_user_id_name'. The SQL statement executed was: INSERT INTO `user_oauth` (`provider`, `profile_cache`, `identifier`, `session_data`, `user_id`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4).
+in C:\Users\Chinmay\Workspace\yiipassions\protected\extensions\hoauth\models\UserOAuth.php (261)
+in C:\Users\Chinmay\Workspace\yiipassions\protected\extensions\hoauth\HOAuthAction.php (224)
+in C:\Users\Chinmay\Workspace\yiipassions\protected\extensions\hoauth\HOAuthAction.php (163)
+2014/09/29 07:34:23 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1-Facebook' for key 'unic_user_id_name'. The SQL statement executed was: INSERT INTO `user_oauth` (`provider`, `profile_cache`, `identifier`, `session_data`, `user_id`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4)' in C:\Users\Chinmay\Workspace\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\Users\Chinmay\Workspace\yii\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 C:\Users\Chinmay\Workspace\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 C:\Users\Chinmay\Workspace\yiipassions\protected\extensions\hoauth\models\UserOAuth.php(261): CActiveRecord->save()
+#3 C:\Users\Chinmay\Workspace\yiipassions\protected\extensions\hoauth\HOAuthAction.php(224): UserOAuth->bindTo('1')
+#4 C:\Users\Chinmay\Workspace\yiipassions\protected\extensions\hoauth\HOAuthAction.php(163): HOAuthAction->getAccessCode()
+#5 C:\Users\Chinmay\Workspace\yiipassions\protected\extensions\hoauth\HOAuthAction.php(136): HOAuthAction->oAuth('Facebook')
+#6 C:\Users\Chinmay\Workspace\yii\framework\web\actions\CAction.php(76): HOAuthAction->run()
+#7 C:\Users\Chinmay\Workspace\yii\framework\web\CController.php(308): CAction->runWithParams(Array)
+#8 C:\Users\Chinmay\Workspace\yii\framework\web\CController.php(286): CController->runAction(Object(HOAuthAction))
+#9 C:\Users\Chinmay\Workspace\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(HOAuthAction), Array)
+#10 C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php(282): CController->run('oauth')
+#11 C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/oauth')
+#12 C:\Users\Chinmay\Workspace\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\Users\Chinmay\Workspace\yiipassions\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/yiipassions/site/oauth?provider=Facebook
+---
+2014/09/29 07:40:34 [error] [php] Undefined variable: provider (C:\Users\Chinmay\Workspace\yiipassions\protected\extensions\hoauth\HOAuthAction.php:270)
+Stack trace:
+#0 C:\Users\Chinmay\Workspace\yiipassions\protected\extensions\hoauth\HOAuthAction.php(136): HOAuthAction->oAuth()
+#1 C:\Users\Chinmay\Workspace\yii\framework\web\actions\CAction.php(76): HOAuthAction->run()
+#2 C:\Users\Chinmay\Workspace\yii\framework\web\CController.php(308): HOAuthAction->runWithParams()
+#3 C:\Users\Chinmay\Workspace\yii\framework\web\CController.php(286): SiteController->runAction()
+#4 C:\Users\Chinmay\Workspace\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#5 C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#6 C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\Users\Chinmay\Workspace\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\Users\Chinmay\Workspace\yiipassions\index.php(13): CWebApplication->run()
+REQUEST_URI=/yiipassions/site/oauth?provider=Facebook
+in C:\Users\Chinmay\Workspace\yiipassions\protected\extensions\hoauth\HOAuthAction.php (270)
+in C:\Users\Chinmay\Workspace\yiipassions\protected\extensions\hoauth\HOAuthAction.php (211)
+in C:\Users\Chinmay\Workspace\yiipassions\protected\extensions\hoauth\HOAuthAction.php (163)
+2014/09/29 12:44:57 [error] [exception.CException] exception 'CException' with message 'CWebApplication and its behaviors do not have a method or closure named "baseUrl".' in C:\Users\Chinmay\Workspace\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\Users\Chinmay\Workspace\yiipassions\protected\views\layouts\main.php(47): CComponent->__call('baseUrl', Array)
+#1 C:\Users\Chinmay\Workspace\yiipassions\protected\views\layouts\main.php(47): CWebApplication->baseUrl()
+#2 C:\Users\Chinmay\Workspace\yii\framework\web\CBaseController.php(126): require('C:\Users\Chinma...')
+#3 C:\Users\Chinmay\Workspace\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\Chinma...', Array, true)
+#4 C:\Users\Chinmay\Workspace\yii\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\Users\Chinma...', Array, true)
+#5 C:\Users\Chinmay\Workspace\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
+#6 C:\Users\Chinmay\Workspace\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
+#7 C:\Users\Chinmay\Workspace\yii\framework\web\CBaseController.php(206): COutputProcessor->run()
+#8 C:\Users\Chinmay\Workspace\yii\framework\web\CBaseController.php(300): CBaseController->endWidget('CContentDecorat...')
+#9 C:\Users\Chinmay\Workspace\yiipassions\protected\views\layouts\column1.php(6): CBaseController->endContent()
+#10 C:\Users\Chinmay\Workspace\yii\framework\web\CBaseController.php(126): require('C:\Users\Chinma...')
+#11 C:\Users\Chinmay\Workspace\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\Chinma...', Array, true)
+#12 C:\Users\Chinmay\Workspace\yii\framework\web\CController.php(784): CBaseController->renderFile('C:\Users\Chinma...', Array, true)
+#13 C:\Users\Chinmay\Workspace\yiipassions\protected\controllers\SiteController.php(62): CController->render('index')
+#14 C:\Users\Chinmay\Workspace\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#15 C:\Users\Chinmay\Workspace\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\Users\Chinmay\Workspace\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#17 C:\Users\Chinmay\Workspace\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php(282): CController->run('')
+#19 C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#20 C:\Users\Chinmay\Workspace\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\Users\Chinmay\Workspace\yiipassions\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/yiipassions/
+HTTP_REFERER=http://localhost/yiipassions/site/login
+---
+2014/09/29 13:02:08 [error] [exception.Exception] exception 'Exception' with message 'Authentication failed! Facebook returned an invalid user id.' in C:\Users\Chinmay\Workspace\yiipassions\protected\extensions\hoauth\hybridauth\Hybrid\Providers\Facebook.php:91
+Stack trace:
+#0 C:\Users\Chinmay\Workspace\yiipassions\protected\extensions\hoauth\hybridauth\Hybrid\Endpoint.php(175): Hybrid_Providers_Facebook->loginFinish()
+#1 C:\Users\Chinmay\Workspace\yiipassions\protected\extensions\hoauth\hybridauth\Hybrid\Endpoint.php(56): Hybrid_Endpoint::processAuthDone()
+#2 C:\Users\Chinmay\Workspace\yiipassions\protected\extensions\hoauth\hybridauth\index.php(15): Hybrid_Endpoint::process()
+#3 C:\Users\Chinmay\Workspace\yiipassions\protected\extensions\hoauth\HOAuthAction.php(140): require('C:\Users\Chinma...')
+#4 C:\Users\Chinmay\Workspace\yii\framework\web\actions\CAction.php(76): HOAuthAction->run()
+#5 C:\Users\Chinmay\Workspace\yii\framework\web\CController.php(308): CAction->runWithParams(Array)
+#6 C:\Users\Chinmay\Workspace\yii\framework\web\CController.php(286): CController->runAction(Object(HOAuthAction))
+#7 C:\Users\Chinmay\Workspace\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(HOAuthAction), Array)
+#8 C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php(282): CController->run('oauth')
+#9 C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/oauth')
+#10 C:\Users\Chinmay\Workspace\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\Users\Chinmay\Workspace\yiipassions\index.php(13): CApplication->run()
+#12 {main}
+
+Next exception 'Exception' with message 'Authentication failed! Facebook returned an invalid user id.' in C:\Users\Chinmay\Workspace\yiipassions\protected\extensions\hoauth\hybridauth\Hybrid\Auth.php:147
+Stack trace:
+#0 C:\Users\Chinmay\Workspace\yiipassions\protected\extensions\hoauth\hybridauth\Hybrid\Auth.php(39): Hybrid_Auth::initialize(Array)
+#1 C:\Users\Chinmay\Workspace\yiipassions\protected\extensions\hoauth\models\UserOAuth.php(159): Hybrid_Auth->__construct(Array)
+#2 C:\Users\Chinmay\Workspace\yii\framework\base\CComponent.php(111): UserOAuth->getHybridAuth()
+#3 C:\Users\Chinmay\Workspace\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('hybridauth')
+#4 C:\Users\Chinmay\Workspace\yiipassions\protected\extensions\hoauth\models\UserOAuth.php(194): CActiveRecord->__get('hybridauth')
+#5 C:\Users\Chinmay\Workspace\yiipassions\protected\extensions\hoauth\HOAuthAction.php(160): UserOAuth->authenticate('Facebook')
+#6 C:\Users\Chinmay\Workspace\yiipassions\protected\extensions\hoauth\HOAuthAction.php(136): HOAuthAction->oAuth('Facebook')
+#7 C:\Users\Chinmay\Workspace\yii\framework\web\actions\CAction.php(76): HOAuthAction->run()
+#8 C:\Users\Chinmay\Workspace\yii\framework\web\CController.php(308): CAction->runWithParams(Array)
+#9 C:\Users\Chinmay\Workspace\yii\framework\web\CController.php(286): CController->runAction(Object(HOAuthAction))
+#10 C:\Users\Chinmay\Workspace\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(HOAuthAction), Array)
+#11 C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php(282): CController->run('oauth')
+#12 C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/oauth')
+#13 C:\Users\Chinmay\Workspace\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\Users\Chinmay\Workspace\yiipassions\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/yiipassions/site/oauth?provider=Facebook
+HTTP_REFERER=http://localhost/yiipassions/site/login
+---
+2014/09/29 13:12:12 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser._id" is not defined.' in C:\Users\Chinmay\Workspace\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\Users\Chinmay\Workspace\yii\framework\web\auth\CWebUser.php(146): CComponent->__get('_id')
+#1 C:\Users\Chinmay\Workspace\yiipassions\protected\views\layouts\main.php(63): CWebUser->__get('_id')
+#2 C:\Users\Chinmay\Workspace\yii\framework\web\CBaseController.php(126): require('C:\Users\Chinma...')
+#3 C:\Users\Chinmay\Workspace\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\Chinma...', Array, true)
+#4 C:\Users\Chinmay\Workspace\yii\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\Users\Chinma...', Array, true)
+#5 C:\Users\Chinmay\Workspace\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
+#6 C:\Users\Chinmay\Workspace\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
+#7 C:\Users\Chinmay\Workspace\yii\framework\web\CBaseController.php(206): COutputProcessor->run()
+#8 C:\Users\Chinmay\Workspace\yii\framework\web\CBaseController.php(300): CBaseController->endWidget('CContentDecorat...')
+#9 C:\Users\Chinmay\Workspace\yiipassions\protected\views\layouts\column1.php(6): CBaseController->endContent()
+#10 C:\Users\Chinmay\Workspace\yii\framework\web\CBaseController.php(126): require('C:\Users\Chinma...')
+#11 C:\Users\Chinmay\Workspace\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\Chinma...', Array, true)
+#12 C:\Users\Chinmay\Workspace\yii\framework\web\CController.php(784): CBaseController->renderFile('C:\Users\Chinma...', Array, true)
+#13 C:\Users\Chinmay\Workspace\yiipassions\protected\controllers\SiteController.php(128): CController->render('login', Array)
+#14 C:\Users\Chinmay\Workspace\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#15 C:\Users\Chinmay\Workspace\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\Users\Chinmay\Workspace\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#17 C:\Users\Chinmay\Workspace\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php(282): CController->run('login')
+#19 C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#20 C:\Users\Chinmay\Workspace\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\Users\Chinmay\Workspace\yiipassions\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/yiipassions/site/login
+HTTP_REFERER=http://localhost/yiipassions/site/login
+---
+2014/09/29 17:19:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/big/large-2.jpg".' in C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/big/larg...')
+#1 C:\Users\Chinmay\Workspace\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\Chinmay\Workspace\yiipassions\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiipassions/images/big/large-2.jpg
+HTTP_REFERER=http://localhost/yiipassions/
+---
+2014/09/29 17:19:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/big/large-1.jpg".' in C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/big/larg...')
+#1 C:\Users\Chinmay\Workspace\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\Chinmay\Workspace\yiipassions\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiipassions/images/big/large-1.jpg
+HTTP_REFERER=http://localhost/yiipassions/
+---
+2014/09/29 17:19:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/circle_1.png".' in C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/circle_1...')
+#1 C:\Users\Chinmay\Workspace\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\Chinmay\Workspace\yiipassions\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiipassions/images/circle_1.png
+HTTP_REFERER=http://localhost/yiipassions/
+---
+2014/09/29 17:19:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/circle_2.png".' in C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/circle_2...')
+#1 C:\Users\Chinmay\Workspace\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\Chinmay\Workspace\yiipassions\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiipassions/images/circle_2.png
+HTTP_REFERER=http://localhost/yiipassions/
+---
+2014/09/29 17:19:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/rectangle_2.png".' in C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/rectangl...')
+#1 C:\Users\Chinmay\Workspace\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\Chinmay\Workspace\yiipassions\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiipassions/images/rectangle_2.png
+HTTP_REFERER=http://localhost/yiipassions/
+---
+2014/09/29 17:19:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/big/large-3.jpg".' in C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/big/larg...')
+#1 C:\Users\Chinmay\Workspace\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\Chinmay\Workspace\yiipassions\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiipassions/images/big/large-3.jpg
+HTTP_REFERER=http://localhost/yiipassions/
+---
+2014/09/29 17:19:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/rectangle_4.png".' in C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/rectangl...')
+#1 C:\Users\Chinmay\Workspace\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\Chinmay\Workspace\yiipassions\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiipassions/images/rectangle_4.png
+HTTP_REFERER=http://localhost/yiipassions/
+---
+2014/09/29 17:19:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/circle_4.png".' in C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/circle_4...')
+#1 C:\Users\Chinmay\Workspace\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\Chinmay\Workspace\yiipassions\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiipassions/images/circle_4.png
+HTTP_REFERER=http://localhost/yiipassions/
+---
+2014/09/29 17:19:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/big/large-4.jpg".' in C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/big/larg...')
+#1 C:\Users\Chinmay\Workspace\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\Chinmay\Workspace\yiipassions\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiipassions/images/big/large-4.jpg
+HTTP_REFERER=http://localhost/yiipassions/
+---
+2014/09/29 17:19:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/square_4.png".' in C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/square_4...')
+#1 C:\Users\Chinmay\Workspace\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\Chinmay\Workspace\yiipassions\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiipassions/images/square_4.png
+HTTP_REFERER=http://localhost/yiipassions/
+---
+2014/09/29 17:19:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/triangle_3.png".' in C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/triangle...')
+#1 C:\Users\Chinmay\Workspace\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\Chinmay\Workspace\yiipassions\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiipassions/images/triangle_3.png
+HTTP_REFERER=http://localhost/yiipassions/
+---
+2014/09/29 17:25:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/003.png".' in C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/003.png')
+#1 C:\Users\Chinmay\Workspace\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\Chinmay\Workspace\yiipassions\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiipassions/images/003.png
+HTTP_REFERER=http://localhost/yiipassions/
+---
+2014/09/29 17:25:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/004.png".' in C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/004.png')
+#1 C:\Users\Chinmay\Workspace\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\Chinmay\Workspace\yiipassions\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiipassions/images/004.png
+HTTP_REFERER=http://localhost/yiipassions/
+---
+2014/09/29 17:25:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/006.png".' in C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/006.png')
+#1 C:\Users\Chinmay\Workspace\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\Chinmay\Workspace\yiipassions\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiipassions/images/006.png
+HTTP_REFERER=http://localhost/yiipassions/
+---
+2014/09/29 17:25:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/big/009.jpg".' in C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/big/009....')
+#1 C:\Users\Chinmay\Workspace\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\Chinmay\Workspace\yiipassions\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiipassions/images/big/009.jpg
+HTTP_REFERER=http://localhost/yiipassions/
+---
+2014/09/29 17:25:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/001.png".' in C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/001.png')
+#1 C:\Users\Chinmay\Workspace\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\Chinmay\Workspace\yiipassions\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiipassions/images/001.png
+HTTP_REFERER=http://localhost/yiipassions/
+---
+2014/09/29 17:25:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/010.png".' in C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/010.png')
+#1 C:\Users\Chinmay\Workspace\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\Chinmay\Workspace\yiipassions\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiipassions/images/010.png
+HTTP_REFERER=http://localhost/yiipassions/
+---
+2014/09/29 17:25:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/008.png".' in C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/008.png')
+#1 C:\Users\Chinmay\Workspace\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\Chinmay\Workspace\yiipassions\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiipassions/images/008.png
+HTTP_REFERER=http://localhost/yiipassions/
+---
+2014/09/29 17:25:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/011.png".' in C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/011.png')
+#1 C:\Users\Chinmay\Workspace\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\Chinmay\Workspace\yiipassions\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiipassions/images/011.png
+HTTP_REFERER=http://localhost/yiipassions/
+---
+2014/09/29 17:26:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/big/009.jpg".' in C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/big/009....')
+#1 C:\Users\Chinmay\Workspace\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\Chinmay\Workspace\yiipassions\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiipassions/images/big/009.jpg
+HTTP_REFERER=http://localhost/yiipassions/
+---
+2014/09/29 20:48:57 [error] [php] Trying to get property of non-object (C:\Users\Chinmay\Workspace\yiipassions\protected\views\layouts\main.php:68)
+Stack trace:
+#0 C:\Users\Chinmay\Workspace\yii\framework\web\widgets\CContentDecorator.php(76): SiteController->renderFile()
+#1 C:\Users\Chinmay\Workspace\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate()
+#2 C:\Users\Chinmay\Workspace\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput()
+#3 C:\Users\Chinmay\Workspace\yii\framework\web\CBaseController.php(206): CContentDecorator->run()
+#4 C:\Users\Chinmay\Workspace\yii\framework\web\CBaseController.php(300): SiteController->endWidget()
+#5 C:\Users\Chinmay\Workspace\yiipassions\protected\views\layouts\column1.php(6): SiteController->endContent()
+#6 C:\Users\Chinmay\Workspace\yii\framework\web\CBaseController.php(126): require()
+#7 C:\Users\Chinmay\Workspace\yii\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#8 C:\Users\Chinmay\Workspace\yii\framework\web\CController.php(784): SiteController->renderFile()
+#9 C:\Users\Chinmay\Workspace\yiipassions\protected\controllers\SiteController.php(128): SiteController->render()
+#10 C:\Users\Chinmay\Workspace\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#11 C:\Users\Chinmay\Workspace\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#12 C:\Users\Chinmay\Workspace\yii\framework\web\CController.php(286): SiteController->runAction()
+#13 C:\Users\Chinmay\Workspace\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#14 C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#15 C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#16 C:\Users\Chinmay\Workspace\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 C:\Users\Chinmay\Workspace\yiipassions\index.php(13): CWebApplication->run()
+REQUEST_URI=/yiipassions/site/login
+in C:\Users\Chinmay\Workspace\yiipassions\protected\views\layouts\main.php (68)
+in C:\Users\Chinmay\Workspace\yiipassions\protected\views\layouts\column1.php (6)
+in C:\Users\Chinmay\Workspace\yiipassions\protected\controllers\SiteController.php (128)
+2014/09/29 20:49:49 [error] [php] Trying to get property of non-object (C:\Users\Chinmay\Workspace\yiipassions\protected\views\layouts\main.php:70)
+Stack trace:
+#0 C:\Users\Chinmay\Workspace\yii\framework\web\widgets\CContentDecorator.php(76): SiteController->renderFile()
+#1 C:\Users\Chinmay\Workspace\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate()
+#2 C:\Users\Chinmay\Workspace\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput()
+#3 C:\Users\Chinmay\Workspace\yii\framework\web\CBaseController.php(206): CContentDecorator->run()
+#4 C:\Users\Chinmay\Workspace\yii\framework\web\CBaseController.php(300): SiteController->endWidget()
+#5 C:\Users\Chinmay\Workspace\yiipassions\protected\views\layouts\column1.php(6): SiteController->endContent()
+#6 C:\Users\Chinmay\Workspace\yii\framework\web\CBaseController.php(126): require()
+#7 C:\Users\Chinmay\Workspace\yii\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#8 C:\Users\Chinmay\Workspace\yii\framework\web\CController.php(784): SiteController->renderFile()
+#9 C:\Users\Chinmay\Workspace\yiipassions\protected\controllers\SiteController.php(128): SiteController->render()
+#10 C:\Users\Chinmay\Workspace\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#11 C:\Users\Chinmay\Workspace\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#12 C:\Users\Chinmay\Workspace\yii\framework\web\CController.php(286): SiteController->runAction()
+#13 C:\Users\Chinmay\Workspace\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#14 C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#15 C:\Users\Chinmay\Workspace\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#16 C:\Users\Chinmay\Workspace\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 C:\Users\Chinmay\Workspace\yiipassions\index.php(13): CWebApplication->run()
+REQUEST_URI=/yiipassions/site/login
+in C:\Users\Chinmay\Workspace\yiipassions\protected\views\layouts\main.php (70)
+in C:\Users\Chinmay\Workspace\yiipassions\protected\views\layouts\column1.php (6)
+in C:\Users\Chinmay\Workspace\yiipassions\protected\controllers\SiteController.php (128)
