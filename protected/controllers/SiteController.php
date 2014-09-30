@@ -59,6 +59,14 @@ class SiteController extends Controller
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
+        if(!Yii::app()->user->isGuest){
+            // get the user data
+            print "<pre>";
+            echo Yii::app()->user->name."<br/>";
+            print_r(Yii::app()->user);
+            print "</pre>";
+
+        }
 		$this->render('index');
 	}
 

@@ -34,7 +34,8 @@
                 if(Yii::app()->user->isGuest):
                 ?>
                 <p class="navbar-text pull-right">
-                    <a href="<?php echo Yii::app()->baseUrl;?>/site/login" class="btn btn-info">Follow Your Passion</a>
+                    <!--<a href="<?php /*echo Yii::app()->baseUrl;*/?>/site/login" class="btn btn-info">Follow Your Passion</a>-->
+                    <?php $this->widget('ext.hoauth.widgets.HOAuth'); ?>
                 </p>
                 <?php
                 endif;
