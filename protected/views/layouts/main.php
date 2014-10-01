@@ -48,8 +48,13 @@
                     if(!Yii::app()->user->isGuest)
                     {
                         ?>
+
                         <a href="<?php echo Yii::app()->baseUrl;?>/site/logout" tabindex="-1">
-                            <i class="icon-signout"></i> Logout (<?php echo Yii::app()->user->name;?> )</a>
+                            <img scr="<?php echo Yii::app()->user->getState("__user_photo_url")?>"/>
+                            <i class="icon-signout"></i> Logout (<?php echo ucfirst(Yii::app()->user->getState("__user_first_name"))." ".ucfirst(Yii::app()->user->getState("__user_last_name"));?> )
+                        </a>
+                        <img scr="<?php echo Yii::app()->user->getState("__user_photo_url")?>"/>
+
                     <?php
                     }
                     ?>

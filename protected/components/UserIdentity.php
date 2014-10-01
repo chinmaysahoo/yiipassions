@@ -16,57 +16,77 @@ class UserIdentity extends CUserIdentity
 	 * @return boolean whether authentication succeeds.
 	 */
 
-    private $_id;
-    private $_firstName;
-    private $_lastName;
-    private $_photoUrl;
-    private $_email;
-    private $_userName;
-	public function authenticate()
-	{
-		/*$users=array(
-			// username => password
-			'demo'=>'demo',
-			'admin'=>'admin',
-		);
-		if(!isset($users[$this->username]))
-			$this->errorCode=self::ERROR_USERNAME_INVALID;
-		elseif($users[$this->username]!==$this->password)
-			$this->errorCode=self::ERROR_PASSWORD_INVALID;
-		else
-			$this->errorCode=self::ERROR_NONE;
-		return !$this->errorCode;*/
 
-        $record = User::model()->findByAttributes(array('user_name' => $this->username));
-        if ($record === null)
+
+
+    /**
+     * @var User $user user model that we will get by email
+     */
+    public $user;
+
+    public function __construct($username,$password=null)
+    {
+        // sets username and password values
+        parent::__construct($username,$password);
+
+        //$this->user = User::model()->find('LOWER(email)=?',array(strtolower($this->username)));
+        $this->user = User::model()->findByEmail($this->username);
+
+        if ($this->user === null)
             $this->errorCode = self::ERROR_USERNAME_INVALID;
-        else {
-            $this->_id = $record->id;
-            $this->_email = $record->email;
-            $this->_firstName = $record->firstName;
-            $this->_lastName = $record->lastName;
-            $this->_userName = $record->userName;
-            $this->_photoUrl = $record->photoUrl;
-            $this->errorCode = self::ERROR_NONE;
+        elseif($password === null)
+        {
+            /**
+             * you can set here states for user logged in with oauth if you need
+             * you can also use hoauthAfterLogin()
+             * @link https://github.com/SleepWalker/hoauth/wiki/Callbacks
+             */
+            $this->beforeAuthentication();
+            $this->errorCode=self::ERROR_NONE;
         }
-        return !$this->errorCode;
-	}
-    public function getId() {
-        return $this->_id;
     }
-    public function getFirstName() {
-        return $this->_firstName;
+
+    /**
+     * Authenticates a user.
+     * @return boolean whether authentication succeeds.
+     */
+    public function authenticate()
+    {
+        if($this->errorCode === self::ERROR_UNKNOWN_IDENTITY)
+        {
+            if (!$this->user->validatePassword($this->password))
+                $this->errorCode = self::ERROR_PASSWORD_INVALID;
+            else
+            {
+                $this->beforeAuthentication();
+                $this->errorCode = self::ERROR_NONE;
+            }
+        }
+        return $this->errorCode == self::ERROR_NONE;
     }
-    public function getLastName() {
-        return $this->_lastName;
+
+    public function getId()
+    {
+        return $this->user->id;
     }
-    public function getEmail() {
-        return $this->_email;
+
+    public function getName()
+    {
+        return $this->user->email;
     }
-    public function getUserName() {
-        return $this->_userName;
+
+    public function beforeAuthentication()
+    {
+        // do before authenctiation work
+        $this->setState('__user_first_name', $this->user->firstname);
+        $this->setState('__user_last_name', $this->user->lastname);
+        $this->setState('__user_email', $this->user->email);
+        $this->setState('__user_photo_url', $this->user->photoURL);
+        $this->setState('__user_user_name', $this->user->username);
     }
-    public function getPhotoUrl() {
-        return $this->_photoUrl;
-    }
+
+
+
+
+
 }
