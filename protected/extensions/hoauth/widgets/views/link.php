@@ -7,6 +7,6 @@
 $additionalClass = $this->onlyIcons ? 'icon' : '';
 $invitation = Yii::app()->user->isGuest ? HOAuthAction::t('Sign in with') : HOAuthAction::t('Connect with');
 ?>
-<p>
+<p class="navbar-text pull-right">
     <a href="<?php echo Yii::app()->createUrl($this->route . '/oauth', array('provider' => $provider)); ?>" class="zocial <?= $additionalClass . ' ' . strtolower($provider) ?>"><?= "$invitation $provider"; ?></a>
 </p>

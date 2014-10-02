@@ -6,6 +6,7 @@
  * The followings are the available columns in table 'global_tag':
  * @property integer $id
  * @property string $global_tag_name
+ * @property integer $tag_frequency
  * @property string $created_on
  * @property string $modified_on
  *
@@ -32,7 +33,7 @@ class GlobalTag extends CActiveRecord
 		return array(
 			array('global_tag_name', 'required'),
 			array('global_tag_name', 'length', 'max'=>255),
-			array('created_on, modified_on', 'safe'),
+			array('tag_frequency','created_on, modified_on', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, global_tag_name, created_on, modified_on', 'safe', 'on'=>'search'),
@@ -59,6 +60,7 @@ class GlobalTag extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'global_tag_name' => 'Tag Name',
+            'tag_frequency' => 'Frequency',
 			'created_on' => 'Created On',
 			'modified_on' => 'Modified On',
 		);
@@ -84,6 +86,7 @@ class GlobalTag extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('global_tag_name',$this->global_tag_name,true);
+        $criteria->compare('tag_frequency', $this->tag_frequency);
 		$criteria->compare('created_on',$this->created_on,true);
 		$criteria->compare('modified_on',$this->modified_on,true);
 

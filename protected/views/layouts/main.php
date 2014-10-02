@@ -11,15 +11,18 @@
     <![endif]-->
 
     <?php
+    $baseUrl = Yii::app()->baseUrl;
+    $cs = Yii::app()->getClientScript();
     $bootstrap_path = Yii::app()->assetManager->publish(Yii::app()->basePath . '/extensions/bootstrap/');
-
     Yii::app()->bootstrap->register();
+    $cs->registerCssFile($baseUrl.'/css/styles.css');
     ?>
-    <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/styles.css" />
+    <!--<link rel="stylesheet" type="text/css" href="<?php /*echo Yii::app()->request->baseUrl; */?>/css/styles.css" />-->
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
 
 <body>
+<div class="wrapper">
 <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container">
@@ -28,23 +31,19 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="brand" href="#"><?php echo CHtml::encode(Yii::app()->name); ?></a>
+            <a class="brand" href="#">
+            <img src="<?php echo Yii::app()->baseUrl;?>/images/logo.png" />
+            </a>
             <div class="nav-collapse collapse">
                 <?php
                 if(Yii::app()->user->isGuest):
                 ?>
-                <p class="navbar-text pull-right">
-                    <!--<a href="<?php /*echo Yii::app()->baseUrl;*/?>/site/login" class="btn btn-info">Follow Your Passion</a>-->
                     <?php $this->widget('ext.hoauth.widgets.HOAuth'); ?>
-                </p>
                 <?php
                 endif;
                 ?>
-                <ul class="nav">
-                    <li class="active"><a href="<?php echo Yii::app()->baseUrl;?>">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <?php
+                <p class="navbar-text pull-right">
+                     <?php
                     if(!Yii::app()->user->isGuest)
                     {
                         ?>
@@ -58,7 +57,7 @@
                     <?php
                     }
                     ?>
-                </ul>
+                </p>
             </div><!--/.nav-collapse -->
         </div>
     </div>
@@ -79,12 +78,10 @@
 	<div class="clear"></div>
 
 	<div id="footer">
-		Copyright &copy; <?php echo date('Y'); ?> by Tropix Technologies.<br/>
-		All Rights Reserved.<br/>
-
+		Copyright &copy; Blazing Passions. <?php echo date('Y'); ?>
 	</div><!-- footer -->
 
 </div><!-- page -->
-
+</div> <!-- Body Wrapper Div Ends-->
 </body>
 </html>

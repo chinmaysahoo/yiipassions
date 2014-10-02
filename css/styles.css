@@ -1,6 +1,28 @@
 body {
-    padding-top: 60px;
-    padding-bottom: 40px;
+    background:url(../images/BlazingPassionBodyBg.png);
+    margin:0;
+    padding: 0;
+    color: #ffffff;
+}
+
+.wrapper {
+    width: 98%;
+    height: auto;
+    margin: 0 1%;
+    padding-top: 50px;
+    float: left;
+    background: #111;
+}
+
+#footer {
+    width: 100%;
+    height: auto;
+    background: #464646;
+    float: left;
+    text-align: center;
+    color: #999;
+    padding: 2px 0;
+    font-size: 13px;
 }
 
 .container-fluid-tag-cloud {
@@ -19,4 +41,8 @@ body {
 .container-fluid-carousel {
     margin-top:10px;
     border: 1px solid #cccccc;
+}
+
+.caption {
+    float:left;
 }

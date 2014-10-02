@@ -48,51 +48,59 @@ Yii::app()->clientScript->registerScriptFile($third_party_scripts . '/jquery.tag
                 <div class="item active">
                     <ul class="thumbnails">
                         <li class="span3">
-                            <div align="center">
-                                <div class="caption">
-                                    <h5>First Caption</h5>
-                                </div>
+                            <div>
+
                                 <div class="thumbnail">
                                     <img src="<?php echo Yii::app()->baseUrl ?>/images/001.jpg"" alt="">
                                 </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed accumsan lorem, eget lobortis metus.</p>
-                                <a class="btn btn-mini btn-info" href="#"><i class="icon-tag icon-white"></i>&nbsp;View Detail</a>
+                                <div class="caption">
+                                    <h5>First Caption</h5>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed accumsan lorem, eget lobortis metus.</p>
+                                    <a class="btn btn-mini btn-info" href="#"><i class="icon-tag icon-white"></i>&nbsp;View Detail</a>
+                                </div>
+
                             </div>
                         </li>
                         <li class="span3">
-                            <div align="center">
-                                <div class="caption">
-                                    <h5>Second Caption</h5>
-                                </div>
+                            <div>
+
                                 <div class="thumbnail">
                                     <img src="<?php echo Yii::app()->baseUrl ?>/images/002.jpg"" alt="">
                                 </div>
-                                <p>Consectetur adipiscing elit. consectetur adipiscing elit. Nunc sed accumsan lorem, eget lobortis metus.</p>
-                                <a class="btn btn-mini btn-info" href="#"><i class="icon-tag icon-white"></i>&nbsp;View Detail</a>
+                                <div class="caption">
+                                    <h5>Second Caption</h5>
+                                    <p>Consectetur adipiscing elit. consectetur adipiscing elit. Nunc sed accumsan lorem, eget lobortis metus.</p>
+                                    <a class="btn btn-mini btn-info" href="#"><i class="icon-tag icon-white"></i>&nbsp;View Detail</a>
+                                </div>
+
                             </div>
                         </li>
                         <li class="span3">
-                            <div align="center">
-                                <div class="caption">
-                                    <h5>Third Caption</h5>
-                                </div>
+                            <div>
+
                                 <div class="thumbnail">
                                     <img src="<?php echo Yii::app()->baseUrl ?>/images/003.jpg" alt="">
                                 </div>
-                                <p>Adipiscing elit. Nunc sed accumsan lorem, eget lobortis metus.Lorem ipsum dolor sit amet, consectetur .</p>
-                                <a class="btn btn-mini btn-info" href="#"><i class="icon-tag icon-white"></i>&nbsp;View Detail</a>
+                                <div class="caption">
+                                    <h5>Third Caption</h5>
+                                    <p>Adipiscing elit. Nunc sed accumsan lorem, eget lobortis metus.Lorem ipsum dolor sit amet, consectetur .</p>
+                                    <a class="btn btn-mini btn-info" href="#"><i class="icon-tag icon-white"></i>&nbsp;View Detail</a>
+                                </div>
+
                             </div>
                         </li>
                         <li class="span3">
-                            <div align="center">
-                                <div class="caption">
-                                    <h5>Fourth Caption</h5>
-                                </div>
+                            <div>
+
                                 <div class="thumbnail">
                                     <img src="<?php echo Yii::app()->baseUrl ?>/images/004.jpg" alt="">
                                 </div>
+                                <div class="caption">
+                                    <h5>Fourth Caption</h5>
+
                                 <p>Nunc sed accumsan lorem, Lorem ipsum dolor sit amet, consectetur adipiscing elit.  eget lobortis metus.</p>
                                 <a class="btn btn-mini btn-info" href="#"><i class="icon-tag icon-white"></i>&nbsp;View Detail</a>
+                                </div>
                             </div>
                         </li>
                     </ul>
@@ -100,51 +108,59 @@ Yii::app()->clientScript->registerScriptFile($third_party_scripts . '/jquery.tag
                 <div class="item">
                     <ul class="thumbnails">
                         <li class="span3">
-                            <div align="center">
-                                <div class="caption">
-                                    <h5>Fifth Caption</h5>
-                                </div>
+                            <div>
+
                                 <div class="thumbnail">
                                     <img src="<?php echo Yii::app()->baseUrl ?>/images/005.jpg" alt="">
                                 </div>
-                                <p>Ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed accumsan lorem, eget lobortis metus.</p>
-                                <a class="btn btn-mini btn-info" href="#"><i class="icon-tag icon-white"></i>&nbsp;View Detail</a>
+                                <div class="caption">
+                                    <h5>Fifth Caption</h5>
+                                    <p>Ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed accumsan lorem, eget lobortis metus.</p>
+                                    <a class="btn btn-mini btn-info" href="#"><i class="icon-tag icon-white"></i>&nbsp;View Detail</a>
+                                </div>
+
                             </div>
                         </li>
                         <li class="span3">
-                            <div align="center">
-                                <div class="caption">
-                                    <h5>Sixth Caption</h5>
-                                </div>
+                            <div>
+
                                 <div class="thumbnail">
                                     <img src="<?php echo Yii::app()->baseUrl ?>/images/006.jpg" alt="">
                                 </div>
-                                <p>Dolor sit amet, consectetur adipiscing elit. Nunc sed accumsan lorem, eget lobortis metus.</p>
-                                <a class="btn btn-mini btn-info" href="#"><i class="icon-tag icon-white"></i>&nbsp;View Detail</a>
+                                <div class="caption">
+                                    <h5>Sixth Caption</h5>
+                                    <p>Dolor sit amet, consectetur adipiscing elit. Nunc sed accumsan lorem, eget lobortis metus.</p>
+                                    <a class="btn btn-mini btn-info" href="#"><i class="icon-tag icon-white"></i>&nbsp;View Detail</a>
+                                </div>
+
                             </div>
                         </li>
                         <li class="span3">
-                            <div align="center">
-                                <div class="caption">
-                                    <h5>Seventh Caption</h5>
-                                </div>
+                            <div>
+
                                 <div class="thumbnail">
                                     <img src="<?php echo Yii::app()->baseUrl ?>/images/007.jpg" alt="">
                                 </div>
-                                <p>Sit amet, consectetur adipiscing elit. Nunc sed accumsan lorem, eget lobortis metus.</p>
-                                <a class="btn btn-mini btn-info" href="#"><i class="icon-tag icon-white"></i>&nbsp;View Detail</a>
+                                <div class="caption">
+                                    <h5>Seventh Caption</h5>
+                                    <p>Sit amet, consectetur adipiscing elit. Nunc sed accumsan lorem, eget lobortis metus.</p>
+                                    <a class="btn btn-mini btn-info" href="#"><i class="icon-tag icon-white"></i>&nbsp;View Detail</a>
+                                </div>
+
                             </div>
                         </li>
                         <li class="span3">
-                            <div align="center">
-                                <div class="caption">
-                                    <h5>Eighth Caption</h5>
-                                </div>
+                            <div>
+
                                 <div class="thumbnail">
                                     <img src="<?php echo Yii::app()->baseUrl ?>/images/008.jpg" alt="">
                                 </div>
-                                <p>Amet, consectetur adipiscing elit. Nunc sed accumsan lorem, eget lobortis metus.</p>
-                                <a class="btn btn-mini btn-info" href="#"><i class="icon-tag icon-white"></i>&nbsp;View Detail</a>
+                                <div class="caption">
+                                    <h5>Eighth Caption</h5>
+                                    <p>Amet, consectetur adipiscing elit. Nunc sed accumsan lorem, eget lobortis metus.</p>
+                                    <a class="btn btn-mini btn-info" href="#"><i class="icon-tag icon-white"></i>&nbsp;View Detail</a>
+                                </div>
+
                             </div>
                         </li>
                     </ul>
@@ -152,51 +168,59 @@ Yii::app()->clientScript->registerScriptFile($third_party_scripts . '/jquery.tag
                 <div class="item">
                     <ul class="thumbnails">
                         <li class="span3">
-                            <div align="center">
-                                <div class="caption">
-                                    <h5>Ninth Caption</h5>
-                                </div>
+                            <div>
+
                                 <div class="thumbnail">
                                     <img src="<?php echo Yii::app()->baseUrl ?>/images/001.jpg" alt="">
                                 </div>
-                                <p>Adipiscing lorem ipsum dolor sit amet, consectetur elit. Nunc sed accumsan lorem, eget lobortis metus.</p>
-                                <a class="btn btn-mini btn-info" href="#"><i class="icon-tag icon-white"></i>&nbsp;View Detail</a>
+                                <div class="caption">
+                                    <h5>Ninth Caption</h5>
+                                    <p>Adipiscing lorem ipsum dolor sit amet, consectetur elit. Nunc sed accumsan lorem, eget lobortis metus.</p>
+                                    <a class="btn btn-mini btn-info" href="#"><i class="icon-tag icon-white"></i>&nbsp;View Detail</a>
+                                </div>
+
                             </div>
                         </li>
                         <li class="span3">
-                            <div align="center">
-                                <div class="caption">
-                                    <h5>Tenth Caption</h5>
-                                </div>
+                            <div>
+
                                 <div class="thumbnail">
                                     <img src="<?php echo Yii::app()->baseUrl ?>/images/009.jpg" alt="">
                                 </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed accumsan lorem, eget lobortis metus.</p>
-                                <a class="btn btn-mini btn-info" href="#"><i class="icon-tag icon-white"></i>&nbsp;View Detail</a>
+                                <div class="caption">
+                                    <h5>Tenth Caption</h5>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed accumsan lorem, eget lobortis metus.</p>
+                                    <a class="btn btn-mini btn-info" href="#"><i class="icon-tag icon-white"></i>&nbsp;View Detail</a>
+                                </div>
+
                             </div>
                         </li>
                         <li class="span3">
-                            <div align="center">
-                                <div class="caption">
-                                    <h5>Eleven Caption</h5>
-                                </div>
+                            <div>
+
                                 <div class="thumbnail">
                                     <img src="<?php echo Yii::app()->baseUrl ?>/images/010.jpg" alt="">
                                 </div>
-                                <p>Elit lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed accumsan lorem, eget lobortis metus.</p>
-                                <a class="btn btn-mini btn-info" href="#"><i class="icon-tag icon-white"></i>&nbsp;View Detail</a>
+                                <div class="caption">
+                                    <h5>Eleven Caption</h5>
+                                    <p>Elit lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed accumsan lorem, eget lobortis metus.</p>
+                                    <a class="btn btn-mini btn-info" href="#"><i class="icon-tag icon-white"></i>&nbsp;View Detail</a>
+                                </div>
+
                             </div>
                         </li>
                         <li class="span3">
-                            <div align="center">
-                                <div class="caption">
-                                    <h5>Twelve Caption</h5>
-                                </div>
+                            <div>
+
                                 <div class="thumbnail">
                                     <img src="<?php echo Yii::app()->baseUrl ?>/images/011.jpg" alt="">
                                 </div>
-                                <p>Nunc lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed accumsan lorem, eget lobortis metus.</p>
-                                <a class="btn btn-mini btn-info" href="#"><i class="icon-tag icon-white"></i>&nbsp;View Detail</a>
+                                <div class="caption">
+                                    <h5>Twelve Caption</h5>
+                                    <p>Nunc lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed accumsan lorem, eget lobortis metus.</p>
+                                    <a class="btn btn-mini btn-info" href="#"><i class="icon-tag icon-white"></i>&nbsp;View Detail</a>
+                                </div>
+
                             </div>
                         </li>
                     </ul>

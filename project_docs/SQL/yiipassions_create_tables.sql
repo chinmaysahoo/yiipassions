@@ -72,6 +72,7 @@ DROP TABLE IF EXISTS `yiipassions`.`global_tag` ;
 CREATE TABLE IF NOT EXISTS `yiipassions`.`global_tag` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `global_tag_name` VARCHAR(255) NOT NULL,
+  `tag_frequency` INT NULL DEFAULT 1,
   `created_on` DATETIME NULL,
   `modified_on` DATETIME NULL,
   PRIMARY KEY (`id`))

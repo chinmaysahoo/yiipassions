@@ -58,9 +58,9 @@ class SiteController extends Controller
 	public function actionIndex()
 	{
         // registered user will redirect to dashborad
-        if(!Yii::app()->user->isGuest){
-            $this->redirect("site/contact");
-        }
+        /*if(!Yii::app()->user->isGuest){
+            $this->redirect("passion/index");
+        }*/
         $global_tags = GlobalTag::model()->findAll(array("select"=>"global_tag_name"));
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
@@ -127,7 +127,11 @@ class SiteController extends Controller
 			$model->attributes=$_POST['LoginForm'];
 			// validate user input and redirect to the previous page if valid
 			if($model->validate() && $model->login())
-				$this->redirect(Yii::app()->user->returnUrl);
+            {
+                $this->redirect(Yii::app()->user->returnUrl);
+
+            }
+
 		}
 		// display the login form
 		$this->render('login',array('model'=>$model));
@@ -142,12 +146,14 @@ class SiteController extends Controller
 		$this->redirect(Yii::app()->homeUrl);
 	}
 
-    /*public static function hoauthAfterLogin($user, $newUser){
-        self::redirect(Yii::app()->homeUrl);
-        $oAuth = UserOAuth::model()->authenticate("facebook");
-        $userContacts = $oAuth->adapter->getUserContacts();
-
-        echo "<pre>";
-        print_r($userContacts);
+    /*public function hoauthAfterLogin($user, $newUser){
+        //$this->redirect(Yii::app()->homeUrl.'/site/contact');
+//        $oAuth = UserOAuth::model()->authenticate("facebook");
+//        $userContacts = $oAuth->adapter->getUserContacts();
+//
+//        echo "<pre>";
+//        print_r($userContacts);
     }*/
+
+    
 }
