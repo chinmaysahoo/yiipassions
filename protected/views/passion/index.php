@@ -4,9 +4,9 @@
 <div class="MainContainer">
     <div class="PostPassionLeft">
         <input name="" type="text" placeholder="Add your Passion" />
-        <div class="Participate">To Participate in the community <a href="#" data-toggle="modal"
+        <div class="Participate">To Participate in the community <a id="add_tags" href="#" data-toggle="modal"
             data-target="#tag-cloud-modal">Add Tags</a> here</div>
-        <textarea name="" cols="" rows=""></textarea>
+        <div id="added-tags"></div>
 
         <div class="PassionList">
             <div class="PassionListScrollPannel">
@@ -133,7 +133,7 @@
         'type'=>'primary',
         'label'=>'Add Tags',
         'url'=>'#',
-        'htmlOptions'=>array('data-dismiss'=>'modal'),
+        'htmlOptions'=>array('data-dismiss'=>'modal', 'id'=>'add-tag-button'),
     )); ?>
     <?php $this->widget('bootstrap.widgets.TbButton', array(
         'label'=>'Close',
@@ -145,17 +145,40 @@
 <?php $this->endWidget(); ?>
 <script type="text/javascript">
     $(document).ready(function(){
+
+        var tag_list = {tags:[]};
+
+        //Check if already have the tag list set if yes, load the tag list else provide a new blank.
+        $(document).on('click', '#add_tags', function() {
+            $('#selected-tags').empty();
+            $.each(tag_list.tags, function(key, value) {
+                $('#selected-tags').append('<span class="tag-pill">' +
+                '<span id="' + value.id +'" class="tag-item">' + value.name + '</span>' +
+                '<span id="remove_id' + value.id + '" class="value">' + value.name + '</span>' +
+                '<span class="close">&times;</span></span>');
+
+            });
+
+        });
+
+
         $(document).on('click', '.tags', function(){
-            //console.log();
             $(this).css("color", '#ff0000');
-            //Check if span is already appened to div
+            //Check if span is already append to div then remove it and change style back
+            //Remove the tag from tag_list too.
             if($('#'+$(this).data('id')).length > 0){
                 //Item Exits, Remove from the selected-tags
                 $('#'+$(this).data('id')).parent().remove();
-                //$('.tag-pill').remove($('#'+$(this).data('id')));
                 $(this).css("color", '#0088cc');
+                //Remove from tag list too
+                var itemToRemove = $(this).text();
+                removeItemFromTagList(itemToRemove);
+
             }
             else {
+                var tag_name = $(this).text();
+                var tag_id = $(this).data('id');
+                tag_list.tags.push({"id":tag_id, "name":tag_name});
 
                 $('#selected-tags').append('<span class="tag-pill">' +
                 '<span id="' + $(this).data('id') +'" class="tag-item">' + $(this).text() + '</span>' +
@@ -167,10 +190,42 @@
         }
         });
 
+        //console.log(tag_list);
         $(document).on('click', '.close', function(){
+            //Remove tag from the tag_list also
+            var itemToRemove = $(this).prev().text();
+            removeItemFromTagList(itemToRemove);
+
           //console.log($(this).prev().text());
             $('.tags:contains("' + $(this).prev().text() +'")').css('color', '#0088cc');
             $(this).parent().remove();
+
+
         });
+
+        $('#add-tag-button').on('click', $(this), function(){
+            $('#added-tags').empty();
+            $.each(tag_list.tags, function(key, value) {
+               //console.log("Key:" +  key + "ValueID:" + value.id + "ValueName:" + value.name);
+                $('#added-tags').append('<span class="tag-pill">' +
+                    '<span class="tag-item">' + value.name + '</span>' +
+                    '<span id="remove_added_id' + value.id + '" class="value">' + value.name + '</span>' +
+                    '<span class="close">&times;</span></span>'
+
+                );
+            });
+
+        });
+
+        function removeItemFromTagList(itemToRemove){
+
+           //console.log(itemToRemove);
+            var result = $.grep(tag_list.tags, function(e){ return e.name != itemToRemove; });
+            //console.log(result);
+            tag_list['tags']  = result;
+            console.log(tag_list);
+            return tag_list;
+
+        }
     });
 </script>

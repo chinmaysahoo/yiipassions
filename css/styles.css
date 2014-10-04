@@ -157,3 +157,22 @@ body {
     font-weight: bold;
     position: relative;
 }
+
+#added-tags {
+    width: 98%;
+    height: 89px;
+    background: #3c3c3c;
+    border: 1px solid #343434;
+    float: left;
+    padding: 5px;
+    margin: 0 0 10px;
+    border-radius: 3px;
+}
+
+#added-tags .tag-pill {
+    display: inline-block;
+    margin: 5px;
+    border-radius: 2px;
+    border: 1px solid #002a80;
+    background-color: rgba(0, 42, 128, 0.4);
+}
