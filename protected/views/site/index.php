@@ -3,7 +3,12 @@
 $this->pageTitle=Yii::app()->name;
 $third_party_scripts = Yii::app()->assetManager->publish(Yii::app()->basePath . '/scripts/');
 Yii::app()->clientScript->registerScriptFile($third_party_scripts . '/jquery.tagcanvas.min.js');
-//var_dump($tags_global);
+
+//Important for redirection after user is authenticated from facebook.
+//@todo: this may/may not work check if user is not authenticated.
+Yii::app()->user->setReturnUrl(Yii::app()->getBaseUrl().'/passion/index');
+
+//var_dump(Yii::app()->user->returnUrl);
 
 ?>
 <div class="container-fluid-tag-cloud">

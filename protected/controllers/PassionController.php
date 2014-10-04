@@ -27,7 +27,9 @@ class PassionController extends Controller {
 
     public function actionIndex() {
 
-        $this->render('index');
+        $global_tags = GlobalTag::model()->findAll(array("select"=>"id, global_tag_name, tag_frequency"));
+
+        $this->render('index', array('tags_global'=>$global_tags));
 
     }
 

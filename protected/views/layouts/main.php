@@ -15,6 +15,7 @@
     $cs = Yii::app()->getClientScript();
     $bootstrap_path = Yii::app()->assetManager->publish(Yii::app()->basePath . '/extensions/bootstrap/');
     Yii::app()->bootstrap->register();
+    $cs->registerCssFile($baseUrl . '/css/font-awesome.css');
     $cs->registerCssFile($baseUrl.'/css/styles.css');
     ?>
     <!--<link rel="stylesheet" type="text/css" href="<?php /*echo Yii::app()->request->baseUrl; */?>/css/styles.css" />-->
@@ -42,22 +43,29 @@
                 <?php
                 endif;
                 ?>
-                <p class="navbar-text pull-right">
+                <div class="navbar-text pull-right">
                      <?php
                     if(!Yii::app()->user->isGuest)
                     {
                         ?>
+                        <div class="navbar-text pull-right button-area">
+                <a>
+                        <img src="<?php echo Yii::app()->user->getState("__user_photo_url")?>"/>
+                        <?php echo ucfirst(Yii::app()->user->getState("__user_first_name"))
+                        ." ".ucfirst(Yii::app()->user->getState("__user_last_name"));?>
+                </a>
 
+                        <!--<i class="icon-signout"></i>-->
                         <a href="<?php echo Yii::app()->baseUrl;?>/site/logout" tabindex="-1">
-                            <img scr="<?php echo Yii::app()->user->getState("__user_photo_url")?>"/>
-                            <i class="icon-signout"></i> Logout (<?php echo ucfirst(Yii::app()->user->getState("__user_first_name"))." ".ucfirst(Yii::app()->user->getState("__user_last_name"));?> )
+                            Log Out
                         </a>
-                        <img scr="<?php echo Yii::app()->user->getState("__user_photo_url")?>"/>
+
+            </div>
 
                     <?php
                     }
                     ?>
-                </p>
+                </div>
             </div><!--/.nav-collapse -->
         </div>
     </div>

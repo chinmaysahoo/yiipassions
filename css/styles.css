@@ -1,8 +1,14 @@
+@font-face {
+    font-family: 'Oswald';
+    src: url('../font/Oswald.otf');
+    src: local("?"), url('../font/Oswald.otf') format("opentype"), url('../font/Oswald-Regular.ttf') format("truetype"); }
+
 body {
+    font-family: calibri, Helvetica, sans-serif;
     background:url(../images/BlazingPassionBodyBg.png);
     margin:0;
     padding: 0;
-    color: #ffffff;
+    color: #eeeeee;
 }
 
 .wrapper {
@@ -45,4 +51,109 @@ body {
 
 .caption {
     float:left;
+}
+
+.button-area {
+    width: auto;
+    height: auto;
+    float: right;
+    border: 1px solid #404040;
+    border-radius: 2px;
+    margin: 0 3px 0 0;
+    padding: 2px;
+}
+
+.button-area a {
+    color: #fff;
+    font-size: 16px;
+    text-align: right;
+    text-decoration: none;
+    padding: 5px 10px 7px;
+    border-right: 1px solid #404040;
+    outline: none;
+}
+
+.button-area img {
+    width: 24px;
+    height: 24px;
+    border: 2px solid #ccc;
+    border-radius: 30px;
+    float: left;
+}
+
+.MainContainer{width:100%; height:auto; min-height:457px; background:#111; float:left;}
+
+/*------------------------ Start PostPassion CSS ----------------------*/
+.PostPassionLeft{width:60%; height:auto; float:left; padding:10px;}
+.PostPassionLeft input[type="text"]{width:98%; height:22px; background:#3c3c3c; border:1px solid #343434; float:left; padding:5px; margin:0 0 10px; border-radius:3px; font-size:18px; outline:none; color:#828282; transition: all 0.25s ease-in-out; -webkit-transition: all 0.25s ease-in-out; -moz-transition: all 0.25s ease-in-out;}
+.PostPassionLeft input[type="text"]:focus{color:#eee; box-shadow:0 0 5px #ffb36f;}
+.PostPassionLeft textarea{width:98%; height:89px; background:#3c3c3c; border:1px solid #343434; float:left; padding:5px; margin:0 0 10px; border-radius:3px; font-size:22px; outline:none; resize:none; font-family:calibri, Helvetica, sans-serif; color:#828282;transition: all 0.25s ease-in-out; -webkit-transition: all 0.25s ease-in-out; -moz-transition: all 0.25s ease-in-out;}
+.PostPassionLeft textarea:focus{color:#eee; box-shadow:0 0 5px #ffb36f;}
+.PostPassionLeft .Participate{font-size:20px; float:left; margin:0 0 5px;}
+.PostPassionLeft .Participate a{font-size:20px; color:#fa851d; text-decoration:none;}
+.PostPassionLeft .Participate a:hover{color:#fff; text-decoration:none;}
+
+.PostPassionLeft .PassionList{background:#252525; padding:10px; width:97%; height:237px; float:left;}
+.PostPassionLeft .PassionListTable{width:100%; height:auto; float:left; margin:0; display:table;}
+.PostPassionLeft .PassionListTableRow{display:table-row;}
+.PostPassionLeft .PassionListTableRow .PassionListTableCell{display:table-cell; font-size:18px; vertical-align:middle; color:#eee; padding:5px;}
+.PostPassionLeft .PassionListTableRow:nth-child(odd){background:#1c1c1c;}
+.PostPassionLeft .PassionListTableRow:nth-child(even){background:#2c2c2c;}
+
+.PostPassionRight{width:37.7%; height:auto; float:left; padding:10px 0;}
+.PostPassionRight .AlertsBox{width:98%; padding:5px; background:#252525; margin:0 0 10px;}
+.PostPassionRight .AlertsBox .Head{font-size:22px; font-family:Oswald; color:#fa851d; text-transform:uppercase; letter-spacing:2px; background:url(../images/OrengeHeadBdr.png) repeat-x bottom; padding:0 0 5px 0; margin:0 0 5px;}
+.PostPassionRight .AlertsBoxTable{width:100%;  display:table;}
+.PostPassionRight .AlertsBox .AlertsBoxTableRow{display:table-row;}
+.PostPassionRight .AlertsBox .AlertsBoxTableRow .AlertsBoxTableCell{display:table-cell; font-size:18px; vertical-align:middle; color:#eee; padding:5px 5px 10px; background:url(../images/AlertsBoxBtmBdr.png) bottom repeat-x;}
+
+.PostPassionRight .AcheivementsBox{width:98%; padding:5px; background:#252525; margin:0;}
+.PostPassionRight .AcheivementsBox .Head{font-size:22px; font-family:Oswald; color:#fa851d; text-transform:uppercase; letter-spacing:2px; background:url(../images/OrengeHeadBdr.png) repeat-x bottom; padding:0 0 5px 0; margin:0 0 5px;}
+.PostPassionRight .AcheivementsBoxTable{width:100%;  display:table; margin:0;}
+.PostPassionRight .AcheivementsBox .AcheivementsBoxTableRow{display:table-row;}
+.PostPassionRight .AcheivementsBox .AcheivementsBoxTableRow .AcheivementsBoxTableCell{display:table-cell; font-size:18px; vertical-align:middle; color:#eee; padding:8.5px 5px ; }
+.PostPassionRight .AcheivementsBox .AcheivementsBoxTableRow:nth-child(odd){background:#1c1c1c;}
+.PostPassionRight .AcheivementsBox .AcheivementsBoxTableRow:nth-child(even){background:#2c2c2c;}
+.PostPassionRight .AcheivementsBox .AcheivementsBoxTableRow .AcheivementsBoxTableCell img{width:34px; height:34px; float:left; padding:0 10px 0 0;}
+/*------------------------ End PostPassion CSS ----------------------*/
+
+#tag-cloud-modal {
+    color: #000000;
+}
+
+#tag-cloud-modal .modal-body {
+    position: relative;
+    max-height: 200px;
+    padding: 15px;
+    overflow-y: auto;
+}
+
+#tag-cloud-modal .modal-body ul li {
+    margin-left: 5px;
+    float: left;
+    list-style: none;
+}
+
+#selected-tags .tag-pill {
+    display: inline-block;
+    margin: 5px;
+    border-radius: 2px;
+    border: 1px solid #002a80;
+    background-color: rgba(0, 42, 128, 0.4);
+}
+.tag-pill .tag-item {
+    padding-right: 5px;
+}
+.tag-pill .value {
+    margin-left: 2px;
+    display: none;
+}
+
+.tag-pill .close {
+    padding-left: 0px;
+    padding-right: 0px;
+    color: #000000;
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
 }
