@@ -98,10 +98,12 @@
 </div>
 <?php $this->beginWidget('bootstrap.widgets.TbModal', array('id'=>'tag-cloud-modal')); ?>
 <?php
-/*foreach($tags_global as $k=>$v) {
-    $typeAheadSource[]  = $v->global_tag_name;
+foreach($tags_global as $k=>$v) {
+    $typeAheadSource[]  = array('id'=>$v->id, 'name'=>$v->global_tag_name);
 }
-*/?>
+$jsonSource = json_encode($typeAheadSource);
+//var_dump($jsonSource);
+?>
 <div class="modal-header">
     <a class="close" data-dismiss="modal">&times;</a>
     <h4>Add Tags</h4>
@@ -112,6 +114,13 @@
             'items'=>4,
         ),
     )); */?>
+    <input id="tag_search" type="text" data-provide="typeahead" data-items="4">
+    <?php $this->widget('bootstrap.widgets.TbButton', array(
+        'type'=>'info',
+        'label'=>'Add Tag',
+        'url'=>'#',
+        'htmlOptions'=>array('id'=>'add-search-tag-button'),
+    )); ?>
 </div>
 
 <div class="modal-body">
@@ -227,5 +236,96 @@
             return tag_list;
 
         }
+
+        //Typeahead
+        var tags = [];
+        var map = {};
+        var selectedTag;
+
+        var tag_source = <?php echo $jsonSource;?>;
+        $.each(tag_source, function (i, tag) {
+            map[tag.name] = tag;
+            tags.push(tag.name);
+        });
+
+        //console.log(tag_source);
+        $('#tag_search').typeahead({
+            source: function (query, process) {
+
+                process(tags);
+            },
+            updater: function (item) {
+                selectedTag = map[item].id;
+                return item;
+            },
+            matcher: function (item) {
+                if (item.toLowerCase().indexOf(this.query.trim().toLowerCase()) != -1) {
+                    return true;
+                }
+            },
+            sorter: function (items) {
+                return items.sort();
+            },
+            highlighter: function (item) {
+                var regex = new RegExp( '(' + this.query + ')', 'gi' );
+                return item.replace( regex, "<strong>$1</strong>" );
+            }
+        });
+        console.log(selectedTag);
+
+        //Add Tag from Type Ahead
+          $('#add-search-tag-button').on('click', $(this), function(){
+            if($.trim($('#tag_search').val()) == '')
+            {
+                //Do Nothing
+            }
+            else {
+                //console.log('Value' + $('#tag_search').val());
+                //console.log(selectedTag);
+                var tag_search_term = $('#tag_search').val();
+
+                //if selectedTag is "undefined" that means the value is not in the tag-cloud and it will be a new insert
+                //in the global tag table.
+
+                if(typeof selectedTag === 'undefined')
+                {
+                    //Remove leading and trailing comma from the string
+                    var processString = tag_search_term.replace(/^[,\s]+|[,\s]+$/g, '').replace(/,[,\s]*,/g, ',');
+                    var terms = processString.split(',');
+                    $.each(terms, function(idx, item){
+                        //console.log(item.trim());
+                        tag_name = item.trim().toLowerCase();
+                        tag_list.tags.push({"id":null, "name":tag_name});
+
+                        $('#selected-tags').append('<span class="tag-pill">' +
+                        '<span id="' + null +'" class="tag-item">' + tag_name + '</span>' +
+                        '<span id="remove_id' + null + '" class="value">' + tag_name + '</span>' +
+                        '<span class="close">&times;</span></span>');
+
+                    });
+
+
+                }
+                else {
+                    tag_name = tag_search_term.trim().toLowerCase();
+                    console.log("Chosen from Tag Type Ahead");
+                    tag_list.tags.push({"id":selectedTag, "name":tag_name});
+
+                    $('#selected-tags').append('<span class="tag-pill">' +
+                    '<span id="' + selectedTag +'" class="tag-item">' + tag_name + '</span>' +
+                    '<span id="remove_id' + selectedTag + '" class="value">' + tag_name + '</span>' +
+                    '<span class="close">&times;</span></span>');
+
+                    $('.tags:contains("' + tag_name +'")').css('color', '#ff0000');
+                }
+                console.log(tag_list);
+
+                //After Everything Clear the tag_search input box.
+                $('#tag_search').val('');
+
+            }
+
+        })
+
     });
 </script>
