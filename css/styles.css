@@ -46,7 +46,6 @@ body {
 
 .container-fluid-carousel {
     margin-top:10px;
-    border: 1px solid #cccccc;
 }
 
 .caption {
@@ -57,7 +56,6 @@ body {
     width: auto;
     height: auto;
     float: right;
-    border: 1px solid #404040;
     border-radius: 2px;
     margin: 0 3px 0 0;
     padding: 2px;
@@ -72,6 +70,7 @@ body {
     border-right: 1px solid #404040;
     outline: none;
 }
+.button-area a:hover {color: #fa851d;}
 
 .button-area img {
     width: 24px;
@@ -79,6 +78,7 @@ body {
     border: 2px solid #ccc;
     border-radius: 30px;
     float: left;
+    margin: 5px 0 0;
 }
 
 .MainContainer{width:100%; height:auto; min-height:457px; background:#111; float:left;}
@@ -175,4 +175,54 @@ body {
     border-radius: 2px;
     border: 1px solid #002a80;
     background-color: rgba(0, 42, 128, 0.4);
+}
+
+.thumbnail{width:155px; margin:0 10px 0 0; float: left; padding: 0; border-radius: 0;}
+.caption{width:155px; float: left;}
+.caption h5{margin: 0; color: #fa851d; font-size: 14px; font-family: calibri, Helvetica, sans-serif;}
+.thumbnails li {line-height:16px !important; border-right: 1px solid #333;}
+.row-fluid .span3 {width: 30.5%; margin: 0 5px 0 0;}
+.row-fluid [class*="span"]:first-child {
+    margin-left: 50px;
+}
+#myCarousel{margin:5px;}
+#myCarousel ul, ol {
+    padding: 0;
+    margin: 0;
+}
+
+.MoreLink {
+    font-size: 12px;
+    color: #fa851d;
+}
+
+.MoreLink a {
+    color: #fa851d;
+    text-decoration: none;
+}
+
+.MoreLink a:hover {
+    color: #e3e3e3;
+    text-decoration: underline;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 40%;
+    left: 15px;
+    width: 19px;
+    height: 40px;
+    margin-top: -20px;
+    font-size: 60px;
+    font-weight: 100;
+    line-height: 30px;
+    color: #ffffff;
+    text-align: center;
+     background: none;
+    border: 0;
+    -webkit-border-radius: 23px;
+    -moz-border-radius: 23px;
+    border-radius: 23px;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
 }

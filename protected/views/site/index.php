@@ -61,7 +61,11 @@ Yii::app()->user->setReturnUrl(Yii::app()->getBaseUrl().'/passion/index');
                                 <div class="caption">
                                     <h5>First Caption</h5>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed accumsan lorem, eget lobortis metus.</p>
-                                    <a class="btn btn-mini btn-info" href="#"><i class="icon-tag icon-white"></i>&nbsp;View Detail</a>
+                                    <div class="MoreLink">
+                                        [
+                                        <a href="#">More</a>
+                                        ]
+                                    </div>
                                 </div>
 
                             </div>
@@ -75,7 +79,11 @@ Yii::app()->user->setReturnUrl(Yii::app()->getBaseUrl().'/passion/index');
                                 <div class="caption">
                                     <h5>Second Caption</h5>
                                     <p>Consectetur adipiscing elit. consectetur adipiscing elit. Nunc sed accumsan lorem, eget lobortis metus.</p>
-                                    <a class="btn btn-mini btn-info" href="#"><i class="icon-tag icon-white"></i>&nbsp;View Detail</a>
+                                    <div class="MoreLink">
+                                        [
+                                        <a href="#">More</a>
+                                        ]
+                                    </div>
                                 </div>
 
                             </div>
@@ -89,23 +97,13 @@ Yii::app()->user->setReturnUrl(Yii::app()->getBaseUrl().'/passion/index');
                                 <div class="caption">
                                     <h5>Third Caption</h5>
                                     <p>Adipiscing elit. Nunc sed accumsan lorem, eget lobortis metus.Lorem ipsum dolor sit amet, consectetur .</p>
-                                    <a class="btn btn-mini btn-info" href="#"><i class="icon-tag icon-white"></i>&nbsp;View Detail</a>
+                                    <div class="MoreLink">
+                                        [
+                                        <a href="#">More</a>
+                                        ]
+                                    </div>
                                 </div>
 
-                            </div>
-                        </li>
-                        <li class="span3">
-                            <div>
-
-                                <div class="thumbnail">
-                                    <img src="<?php echo Yii::app()->baseUrl ?>/images/004.jpg" alt="">
-                                </div>
-                                <div class="caption">
-                                    <h5>Fourth Caption</h5>
-
-                                <p>Nunc sed accumsan lorem, Lorem ipsum dolor sit amet, consectetur adipiscing elit.  eget lobortis metus.</p>
-                                <a class="btn btn-mini btn-info" href="#"><i class="icon-tag icon-white"></i>&nbsp;View Detail</a>
-                                </div>
                             </div>
                         </li>
                     </ul>
@@ -121,7 +119,11 @@ Yii::app()->user->setReturnUrl(Yii::app()->getBaseUrl().'/passion/index');
                                 <div class="caption">
                                     <h5>Fifth Caption</h5>
                                     <p>Ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed accumsan lorem, eget lobortis metus.</p>
-                                    <a class="btn btn-mini btn-info" href="#"><i class="icon-tag icon-white"></i>&nbsp;View Detail</a>
+                                    <div class="MoreLink">
+                                        [
+                                        <a href="#">More</a>
+                                        ]
+                                    </div>
                                 </div>
 
                             </div>
@@ -135,7 +137,11 @@ Yii::app()->user->setReturnUrl(Yii::app()->getBaseUrl().'/passion/index');
                                 <div class="caption">
                                     <h5>Sixth Caption</h5>
                                     <p>Dolor sit amet, consectetur adipiscing elit. Nunc sed accumsan lorem, eget lobortis metus.</p>
-                                    <a class="btn btn-mini btn-info" href="#"><i class="icon-tag icon-white"></i>&nbsp;View Detail</a>
+                                    <div class="MoreLink">
+                                        [
+                                        <a href="#">More</a>
+                                        ]
+                                    </div>
                                 </div>
 
                             </div>
@@ -149,21 +155,11 @@ Yii::app()->user->setReturnUrl(Yii::app()->getBaseUrl().'/passion/index');
                                 <div class="caption">
                                     <h5>Seventh Caption</h5>
                                     <p>Sit amet, consectetur adipiscing elit. Nunc sed accumsan lorem, eget lobortis metus.</p>
-                                    <a class="btn btn-mini btn-info" href="#"><i class="icon-tag icon-white"></i>&nbsp;View Detail</a>
-                                </div>
-
-                            </div>
-                        </li>
-                        <li class="span3">
-                            <div>
-
-                                <div class="thumbnail">
-                                    <img src="<?php echo Yii::app()->baseUrl ?>/images/008.jpg" alt="">
-                                </div>
-                                <div class="caption">
-                                    <h5>Eighth Caption</h5>
-                                    <p>Amet, consectetur adipiscing elit. Nunc sed accumsan lorem, eget lobortis metus.</p>
-                                    <a class="btn btn-mini btn-info" href="#"><i class="icon-tag icon-white"></i>&nbsp;View Detail</a>
+                                    <div class="MoreLink">
+                                        [
+                                        <a href="#">More</a>
+                                        ]
+                                    </div>
                                 </div>
 
                             </div>
@@ -181,7 +177,11 @@ Yii::app()->user->setReturnUrl(Yii::app()->getBaseUrl().'/passion/index');
                                 <div class="caption">
                                     <h5>Ninth Caption</h5>
                                     <p>Adipiscing lorem ipsum dolor sit amet, consectetur elit. Nunc sed accumsan lorem, eget lobortis metus.</p>
-                                    <a class="btn btn-mini btn-info" href="#"><i class="icon-tag icon-white"></i>&nbsp;View Detail</a>
+                                    <div class="MoreLink">
+                                        [
+                                        <a href="#">More</a>
+                                        ]
+                                    </div>
                                 </div>
 
                             </div>
@@ -195,7 +195,12 @@ Yii::app()->user->setReturnUrl(Yii::app()->getBaseUrl().'/passion/index');
                                 <div class="caption">
                                     <h5>Tenth Caption</h5>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed accumsan lorem, eget lobortis metus.</p>
-                                    <a class="btn btn-mini btn-info" href="#"><i class="icon-tag icon-white"></i>&nbsp;View Detail</a>
+
+                                    <div class="MoreLink">
+                                        [
+                                        <a href="#">More</a>
+                                        ]
+                                    </div>
                                 </div>
 
                             </div>
@@ -209,21 +214,12 @@ Yii::app()->user->setReturnUrl(Yii::app()->getBaseUrl().'/passion/index');
                                 <div class="caption">
                                     <h5>Eleven Caption</h5>
                                     <p>Elit lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed accumsan lorem, eget lobortis metus.</p>
-                                    <a class="btn btn-mini btn-info" href="#"><i class="icon-tag icon-white"></i>&nbsp;View Detail</a>
-                                </div>
+                                    <div class="MoreLink">
+                                        [
+                                        <a href="#">More</a>
+                                        ]
+                                    </div>
 
-                            </div>
-                        </li>
-                        <li class="span3">
-                            <div>
-
-                                <div class="thumbnail">
-                                    <img src="<?php echo Yii::app()->baseUrl ?>/images/011.jpg" alt="">
-                                </div>
-                                <div class="caption">
-                                    <h5>Twelve Caption</h5>
-                                    <p>Nunc lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed accumsan lorem, eget lobortis metus.</p>
-                                    <a class="btn btn-mini btn-info" href="#"><i class="icon-tag icon-white"></i>&nbsp;View Detail</a>
                                 </div>
 
                             </div>
